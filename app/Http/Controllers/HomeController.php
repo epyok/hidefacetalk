@@ -30,48 +30,8 @@ class HomeController extends Controller
 
     public function root()
     {
-        $products = Products::selectRaw('products.updated_at,
-        products.product_id,
-        products.product_name,
-        products.product_type,
-        products_type.id,
-        products_type.product_type_name,
-        products.created_at,
-        products.product_bid_price,
-        products.product_open_price,
-        products.close_datetime')
-            ->join('products_type', 'products.product_type', '=', 'products_type.id')
-            ->orderBy('products.updated_at', 'asc')
-            ->get();
-
-        $now = Carbon::now(); // เวลาปัจจุบัน
-        $targetDateTime = Carbon::parse('2023-06-19 08:00:00'); // เวลาที่ต้องการนับถอยหลังถึง
-
-        $diff = $targetDateTime->diffInSeconds($now); // คำนวณความแตกต่างในหน่วยวินาที
-
-        if ($diff > 0) {
-            $hours = floor($diff / 3600); // หารเวลาที่เหลือเป็นชั่วโมง
-            $minutes = floor(($diff % 3600) / 60); // หารเวลาที่เหลือเป็นนาที
-            $seconds = $diff % 60; // หารเวลาที่เหลือเป็นวินาที
-
-            /*echo "เหลือเวลาถอยหลัง: {$hours} ชั่วโมง {$minutes} นาที {$seconds} วินาที";
-        } else {
-            echo "เวลาที่กำหนดผ่านไปแล้ว"; */
-        }
-
-        return view('index', compact('products'));
-    }
-
-    public function timeClose(request $request)
-    {
-        if (isset($_POST['function']) && $_POST['function'] == 'timeClose') {
-
-            Products::where('id', '1')->update(['close_datetime' =>  null]);
-
-            return response()->json([
-                'success' => 'การประมูลจบลงแล้ว',
-            ]);
-        }
+     
+        return view('index');
     }
 
     /*Language Translation*/

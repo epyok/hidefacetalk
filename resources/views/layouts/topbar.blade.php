@@ -189,52 +189,54 @@
         </div>
 
         <div class="dropdown d-inline-block">
-            <button type="button" class="btn header-item waves-effect"
-                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                @switch(Session::get('lang'))
-                    @case('ru')
-                        <img src="{{ URL::asset('/assets/images/flags/russia.jpg')}}" alt="Header Language" height="16">
+                <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @switch(Config::get('app.locale'))
+                    @case('zh-CN')
+                    <img src="{{ URL::asset('/assets/images/flags/china.png')}}" alt="Header Language" height="22"> <span class="align-middle"> {{ GoogleTranslate::trans('Chinese', app()->getLocale()) }}</span>
                     @break
-                    @case('it')
-                        <img src="{{ URL::asset('/assets/images/flags/italy.jpg')}}" alt="Header Language" height="16">
+                    @case('en')
+                    <img src="{{ URL::asset('/assets/images/flags/us.jpg')}}" alt="Header Language" height="16"> <span class="align-middle"> {{ GoogleTranslate::trans('English', app()->getLocale()) }}</span>
+                    @break
+                    @case('fr')
+                    <img src="{{ URL::asset('/assets/images/flags/french.jpg')}}" alt="Header Language" height="16"> <span class="align-middle"> {{ GoogleTranslate::trans('French', app()->getLocale()) }}</span>
                     @break
                     @case('de')
-                        <img src="{{ URL::asset('/assets/images/flags/germany.jpg')}}" alt="Header Language" height="16">
+                    <img src="{{ URL::asset('/assets/images/flags/germany.jpg')}}" alt="Header Language" height="16"> <span class="align-middle"> {{ GoogleTranslate::trans('german', app()->getLocale()) }}</span>
                     @break
-                    @case('es')
-                        <img src="{{ URL::asset('/assets/images/flags/spain.jpg')}}" alt="Header Language" height="16">
+                    @case('ja')
+                    <img src="{{ URL::asset('/assets/images/flags/japan.png')}}" alt="Header Language" height="22"> <span class="align-middle"> {{ GoogleTranslate::trans('Japanese', app()->getLocale()) }}</span>
                     @break
                     @default
-                        <img src="{{ URL::asset('/assets/images/flags/us.jpg')}}" alt="Header Language" height="16">
-                @endswitch
-            </button>
-            <div class="dropdown-menu dropdown-menu-end">
-
-                <!-- item-->
-                <a href="{{ url('index/en') }}" class="dropdown-item notify-item language" data-lang="eng">
-                    <img src="{{ URL::asset ('/assets/images/flags/us.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
-                </a>
-                <!-- item-->
-                <a href="{{ url('index/es') }}" class="dropdown-item notify-item language" data-lang="sp">
-                    <img src="{{ URL::asset ('/assets/images/flags/spain.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
-                </a>
-
-                <!-- item-->
-                <a href="{{ url('index/de') }}" class="dropdown-item notify-item language" data-lang="gr">
-                    <img src="{{ URL::asset ('/assets/images/flags/germany.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
-                </a>
-
-                <!-- item-->
-                <a href="{{ url('index/it') }}" class="dropdown-item notify-item language" data-lang="it">
-                    <img src="{{ URL::asset ('/assets/images/flags/italy.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
-                </a>
-
-                <!-- item-->
-                <a href="{{ url('index/ru') }}" class="dropdown-item notify-item language" data-lang="ru">
-                    <img src="{{ URL::asset ('/assets/images/flags/russia.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
-                </a>
+                    <img src="{{ URL::asset('/assets/images/flags/thailand.png')}}" alt="Header Language" height="24"> <span class="align-middle"> {{ GoogleTranslate::trans('Thai language', app()->getLocale()) }}</span>
+                    @endswitch
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <!-- item-->
+                    <a href="{{ route('changeLang').'?lang=zh-CN' }}" class="dropdown-item notify-item language">
+                        <img src="{{ URL::asset ('/assets/images/flags/china.png') }}" alt="user-image" class="me-1" height="20"> <span class="align-middle">{{ GoogleTranslate::trans('Chinese', 'zh-CN') }}</span>
+                    </a>
+                    <!-- item-->
+                    <a href="{{ route('changeLang').'?lang=en' }}" class="dropdown-item notify-item language">
+                        <img src="{{ URL::asset ('/assets/images/flags/us.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">{{ GoogleTranslate::trans('English', 'en' ) }}</span>
+                    </a>
+                    <!-- item-->
+                    <a href="{{ route('changeLang').'?lang=fr' }}" class="dropdown-item notify-item language">
+                        <img src="{{ URL::asset ('/assets/images/flags/french.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">{{ GoogleTranslate::trans('French', 'fr') }}</span>
+                    </a>
+                    <!-- item-->
+                    <a href="{{ route('changeLang').'?lang=de' }}" class="dropdown-item notify-item language">
+                        <img src="{{ URL::asset ('/assets/images/flags/germany.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle"> {{ GoogleTranslate::trans('german', 'de') }}</span>
+                    </a>
+                    <!-- item-->
+                    <a href="{{ route('changeLang').'?lang=ja' }}" class="dropdown-item notify-item language">
+                        <img src="{{ URL::asset ('/assets/images/flags/japan.png') }}" alt="user-image" class="me-1" height="18"> <span class="align-middle">{{ GoogleTranslate::trans('Japanese', 'ja' )}}</span>
+                    </a>
+                    <!-- item-->
+                    <a href="{{ route('changeLang').'?lang=th' }}" class="dropdown-item notify-item language">
+                        <img src="{{ URL::asset ('/assets/images/flags/thailand.png') }}" alt="user-image" class="me-1" height="18"> <span class="align-middle">{{ GoogleTranslate::trans('Thai language', 'th' ) }}</span>
+                    </a>
+                </div>
             </div>
-        </div>
 
         <div class="dropdown d-none d-lg-inline-block ms-1">
             <button type="button" class="btn header-item noti-icon waves-effect"
@@ -379,27 +381,36 @@
             </div>
         </div>
 
-        <div class="dropdown d-inline-block">
-            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="rounded-circle header-profile-user" src="{{ isset(Auth::user()->avatar) ? asset(Auth::user()->avatar) : asset('/assets/images/users/avatar-1.jpg') }}"
-                    alt="Header Avatar">
-                <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ucfirst(Auth::user()->name)}}</span>
-                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
-            </button>
-            <div class="dropdown-menu dropdown-menu-end">
-                <!-- item-->
-                <a class="dropdown-item" href="contacts-profile"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">@lang('translation.Profile')</span></a>
-                <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> <span key="t-my-wallet">@lang('translation.My_Wallet')</span></a>
-                <a class="dropdown-item d-block" href="#" data-bs-toggle="modal" data-bs-target=".change-password"><span class="badge bg-success float-end">11</span><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span key="t-settings">@lang('translation.Settings')</span></a>
-                <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">@lang('translation.Lock_screen')</span></a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-danger" href="javascript:void();" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">@lang('translation.Logout')</span></a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
+        @if(isset(Auth::user()->name))
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="rounded-circle header-profile-user" src="{{ isset(Auth::user()->avatar) ? asset(Auth::user()->avatar) : asset('/assets/images/users/avatar-1.jpg') }}" alt="Header Avatar">
+                    <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ ucfirst(Auth::user()->name) }}</span>
+                    <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <!-- item-->
+                    <a class="dropdown-item" href="contacts-profile"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">@lang('Profile')</span></a>
+                    <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> <span key="t-my-wallet">@lang('My_Wallet')</span></a>
+                    <a class="dropdown-item d-block" href="#" data-bs-toggle="modal" data-bs-target=".change-password"><span class="badge bg-success float-end">11</span><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span key="t-settings">@lang('Settings')</span></a>
+                    <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">@lang('Lock_screen')</span></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href=""><i class="bx bx-home font-size-16 align-middle me-1"></i> <span key="t-lock-screen">{{ trans('message.My Shop') }}</span></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-danger" href="javascript:void();" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">@lang('Logout')</span></a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
             </div>
-        </div>
+            @else
+            <div class="dropdown d-inline-block">
+                <a class="dropdown-item" href="{{ route('login') }}"><button type="button" class="btn header-item waves-effect">{{ GoogleTranslate::trans('Login', app()->getLocale()) }}
+                    </button> </a>
+            </div>
+            @endif
+
+
         <div class="dropdown d-inline-block">
             <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
                 <i class="bx bx-cog bx-spin"></i>
@@ -408,47 +419,40 @@
     </div>
 </div>
 </header>
+
+
 <!--  Change-Password example -->
-<div class="modal fade change-password" tabindex="-1" role="dialog"
-aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade change-password" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="myLargeModalLabel">Change Password</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form method="POST" id="change-password">
                     @csrf
-                    <input type="hidden" value="{{ Auth::user()->id }}" id="data_id">
+                    <input type="hidden" value="{{ isset(Auth::user()->id) ?? Auth::user()->id }}" id="data_id">
                     <div class="mb-3">
                         <label for="current_password">Current Password</label>
-                        <input id="current-password" type="password"
-                            class="form-control @error('current_password') is-invalid @enderror"
-                            name="current_password" autocomplete="current_password"
-                            placeholder="Enter Current Password" value="{{ old('current_password') }}">
+                        <input id="current-password" type="password" class="form-control @error('current_password') is-invalid @enderror" name="current_password" autocomplete="current_password" placeholder="Enter Current Password" value="{{ old('current_password') }}">
                         <div class="text-danger" id="current_passwordError" data-ajax-feedback="current_password"></div>
                     </div>
 
                     <div class="mb-3">
                         <label for="newpassword">New Password</label>
-                        <input id="password" type="password"
-                            class="form-control @error('password') is-invalid @enderror" name="password"
-                            autocomplete="new_password" placeholder="Enter New Password">
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new_password" placeholder="Enter New Password">
                         <div class="text-danger" id="passwordError" data-ajax-feedback="password"></div>
                     </div>
 
                     <div class="mb-3">
                         <label for="userpassword">Confirm Password</label>
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
-                            autocomplete="new_password" placeholder="Enter New Confirm password">
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new_password" placeholder="Enter New Confirm password">
                         <div class="text-danger" id="password_confirmError" data-ajax-feedback="password-confirm"></div>
                     </div>
 
                     <div class="mt-3 d-grid">
-                        <button class="btn btn-primary waves-effect waves-light UpdatePassword" data-id="{{ Auth::user()->id }}"
-                            type="submit">Update Password</button>
+                        <button class="btn btn-primary waves-effect waves-light UpdatePassword" data-id="{{ isset(Auth::user()->id) ?? Auth::user()->id }}" type="submit">Update Password</button>
                     </div>
                 </form>
             </div>

@@ -414,7 +414,7 @@
                     <a class="dropdown-item d-block" href="#" data-bs-toggle="modal" data-bs-target=".change-password"><span class="badge bg-success float-end">11</span><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span key="t-settings">@lang('Settings')</span></a>
                     <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">@lang('Lock_screen')</span></a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ route('myshop') }}"><i class="bx bx-home font-size-16 align-middle me-1"></i> <span key="t-lock-screen">{{ trans('message.My Shop') }}</span></a>
+                    <a class="dropdown-item" href=""><i class="bx bx-home font-size-16 align-middle me-1"></i> <span key="t-lock-screen">{{ trans('message.My Shop') }}</span></a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="javascript:void();" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">@lang('Logout')</span></a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -453,7 +453,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
 
-                            <a href="{{ route('addproduct') }}" class="dropdown-item" key="t-default">hidefacetalk.com</a>
+                            <a href="" class="dropdown-item" key="t-default">hidefacetalk.com</a>
                             <a href="dashboard-saas" class="dropdown-item" key="t-saas">@lang('Saas')</a>
                             <a href="dashboard-crypto" class="dropdown-item" key="t-crypto">@lang('Crypto')</a>
                             <a href="dashboard-blog" class="dropdown-item" key="t-blog">@lang('Blog')</a>
