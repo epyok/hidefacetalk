@@ -23,10 +23,11 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'root'])->name('root');
 Route::get('/home', [HomeController::class, 'root'])->name('home');
 
-
-
 //เปลี่ยนภาษา
 Route::get('lang/change', [LangController::class, 'change'])->name('changeLang');
+
+//เพิ่มโพสต์
+Route::post('/create-post', [HomeController::class, 'createPost'])->name('createpost');
 
 
 
