@@ -5287,3 +5287,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 .jobs-categories a:hover {
     color: #556ee6;
 }
+
+/*---------------------------------------------------------------------*/
+
+.btn-like:hover {
+    color: #556ee6 ;
+}
+
