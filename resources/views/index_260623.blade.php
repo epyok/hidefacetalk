@@ -53,7 +53,7 @@
     </div>
 
     <div class="text-sm-center">
-        <button type="button" style="width:100%" class="btn btn-light waves-effect waves-light mb-2 me-2" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg"><i class="mdi mdi-plus me-1"></i>Create Post</button>
+        <button type="button" style="width:100%" class="btn btn-light waves-effect waves-light mb-2 me-2" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg"><i class="mdi mdi-plus me-1"></i>{{ GoogleTranslate::trans('Create Post', app()->getLocale()) }}</button>
     </div>
 
     <!--  <div class="col-sm-3">
@@ -129,8 +129,8 @@
         <div class="card">
             <div class="card-body">
                 <div>
-                    <h4 class="card-title"><img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-sm rounded-circle img-thumbnail"> &nbsp; {{ $val->post_type }}</h4>
-                    <p class="text-muted">{{ $val->post_detail }} </p>
+                    <h4 class="card-title"><img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-sm rounded-circle img-thumbnail"> &nbsp; {{ GoogleTranslate::trans($val->post_type, app()->getLocale()) }}</h4>
+                    <p class="text-muted">{{ GoogleTranslate::trans($val->post_detail, app()->getLocale()) }} </p>
                 </div>
 
                 <div class="bg-transparent border-top">
@@ -149,7 +149,7 @@
 
                     <div class="border-top">
                         <div class="mt-3">
-                            <h5 class="font-size-14"><a href="#"><i class="bx bx-message-dots text-muted align-middle me-1"></i> Read more</a></h5>
+                            <h5 class="font-size-14"><a href="#"><i class="bx bx-message-dots text-muted align-middle me-1"></i> {{ GoogleTranslate::trans('Read more', app()->getLocale()) }}</a></h5>
 
                             <div>
                                 <div class="d-flex py-3">
@@ -216,7 +216,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="myLargeModalLabel">เริ่มโพสต์เรื่องที่ต้องการได้เลย</h5>
+                <h5 class="modal-title" id="myLargeModalLabel">{{ GoogleTranslate::trans('เริ่มโพสต์เรื่องที่ต้องการได้เลย', app()->getLocale()) }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -226,26 +226,26 @@
                         <div class="col-md-4">
                             <div class="form-floating mb-3">
                                 <select class="form-select" id="floatingSelectGrid" name="post_type" aria-label="Floating label select example">
-                                    <option value="1">เรื่องทั่วไป</option>
-                                    <option value="2">ความรัก</option>
-                                    <option value="4">ความเครียด</option>
-                                    <option value="5">การเมือง</option>
-                                    <option value="6">ไอดอล</option>
-                                    <option value="7">การศึกษา</option>
-                                    <option value="8">เกม</option>
-                                    <option value="9">กีฬา</option>
-                                    <option value="10">นิยาย</option>
-                                    <option value="11">การลงทุน</option>
-                                    <option value="12">อนิเมะ</option>
+                                    <option value="1">{{ GoogleTranslate::trans('เรื่องทั่วไป', app()->getLocale()) }}</option>
+                                    <option value="2">{{ GoogleTranslate::trans('ความรัก', app()->getLocale()) }}</option>
+                                    <option value="4">{{ GoogleTranslate::trans('ความเครียด', app()->getLocale()) }}</option>
+                                    <option value="5">{{ GoogleTranslate::trans('การเมือง', app()->getLocale()) }}</option>
+                                    <option value="6">{{ GoogleTranslate::trans('ไอดอล', app()->getLocale()) }}</option>
+                                    <option value="7">{{ GoogleTranslate::trans('การศึกษา', app()->getLocale()) }}</option>
+                                    <option value="8">{{ GoogleTranslate::trans('เกม', app()->getLocale()) }}</option>
+                                    <option value="9">{{ GoogleTranslate::trans('กีฬา', app()->getLocale()) }}</option>
+                                    <option value="10">{{ GoogleTranslate::trans('นิยาย', app()->getLocale()) }}</option>
+                                    <option value="11">{{ GoogleTranslate::trans('การลงทุน', app()->getLocale()) }}</option>
+                                    <option value="12">{{ GoogleTranslate::trans('อนิเมะ', app()->getLocale()) }}</option>
                                 </select>
-                                <label for="floatingSelectGrid">แสดงความรู้สึก เกี่ยวกับ</label>
+                                <label for="floatingSelectGrid">{{ GoogleTranslate::trans('แสดงความรู้สึก เกี่ยวกับ', app()->getLocale()) }}</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" name="post_detail" id="floatingnameInput">
-                        <label for="floatingnameInput">โพสต์มันแล้วคุณจะรู้สึกดีขึ้น</label>
+                        <label for="floatingnameInput">{{ GoogleTranslate::trans('โพสต์มันแล้วคุณจะรู้สึกดีขึ้น', app()->getLocale()) }}</label>
                     </div>
 
                     <!-- <div class="mb-3">
@@ -258,7 +258,7 @@
                         </div>
                     </div> -->
                     <div>
-                        <button type="submit" class="btn btn-primary w-md float-end">โพสต์</button>
+                        <button type="submit" class="btn btn-primary w-md float-end">{{ GoogleTranslate::trans('โพสต์', app()->getLocale()) }}</button>
                     </div>
                 </form>
             </div>

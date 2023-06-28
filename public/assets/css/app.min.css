@@ -9,8 +9,8 @@ File: Main Css File
 */
 
 body {
-    font-family: 'K2D', sans-serif;
-  }
+    font-family: "K2D", sans-serif;
+}
 
 :root {
     --bs-heading-bg: #fff;
@@ -5137,7 +5137,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 
 .landing-footer {
     padding: 80px 0 40px;
-    background-color: snow ;
+    background-color: snow;
     color: rgba(0, 0, 0, 0.5);
 }
 .landing-footer .footer-list-title {
@@ -5291,6 +5291,16 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 /*---------------------------------------------------------------------*/
 
 .btn-like:hover {
-    color: #556ee6 ;
+    color: #556ee6;
 }
 
+.img-company:hover {
+    background-color: #dcdcdc;
+    border-color: #8e8e8e;
+}
+
+.img-company-click {
+    background-color: #dcdcdc;
+    border-style: solid ;
+    border-color: #8e8e8e;
+}

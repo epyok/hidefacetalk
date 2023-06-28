@@ -36,7 +36,7 @@
 
         <div class="dropdown dropdown-mega d-none d-lg-block ms-2">
             <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                <span key="t-megamenu">@lang('Mega_Menu')</span>
+                <span key="t-megamenu">บริษัท</span>
                 <i class="mdi mdi-chevron-down"></i>
             </button>
             <div class="dropdown-menu dropdown-megamenu">
@@ -48,7 +48,7 @@
                                 <h5 class="font-size-14 mt-0" key="t-ui-components">@lang('UI_Components')</h5>
                                 <ul class="list-unstyled megamenu-list">
                                     <li>
-                                        <a href="javascript:void(0);" key="t-lightbox">@lang('Lightbox')</a>
+                                        <a href="{{ route('checktracking') }}" key="t-lightbox">checktracking</a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0);" key="t-range-slider">@lang('Range_Slider')</a>
@@ -188,7 +188,7 @@
             </div>
         </div>
 
-        <div class="dropdown d-inline-block">
+       <!-- <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     @switch(Config::get('app.locale'))
                     @case('zh-CN')
@@ -211,32 +211,26 @@
                     @endswitch
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <!-- item-->
                     <a href="{{ route('changeLang').'?lang=zh-CN' }}" class="dropdown-item notify-item language">
                         <img src="{{ URL::asset ('/assets/images/flags/china.png') }}" alt="user-image" class="me-1" height="20"> <span class="align-middle">{{ GoogleTranslate::trans('Chinese', 'zh-CN') }}</span>
                     </a>
-                    <!-- item-->
                     <a href="{{ route('changeLang').'?lang=en' }}" class="dropdown-item notify-item language">
                         <img src="{{ URL::asset ('/assets/images/flags/us.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">{{ GoogleTranslate::trans('English', 'en' ) }}</span>
                     </a>
-                    <!-- item-->
                     <a href="{{ route('changeLang').'?lang=fr' }}" class="dropdown-item notify-item language">
                         <img src="{{ URL::asset ('/assets/images/flags/french.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">{{ GoogleTranslate::trans('French', 'fr') }}</span>
                     </a>
-                    <!-- item-->
                     <a href="{{ route('changeLang').'?lang=de' }}" class="dropdown-item notify-item language">
                         <img src="{{ URL::asset ('/assets/images/flags/germany.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle"> {{ GoogleTranslate::trans('german', 'de') }}</span>
                     </a>
-                    <!-- item-->
                     <a href="{{ route('changeLang').'?lang=ja' }}" class="dropdown-item notify-item language">
                         <img src="{{ URL::asset ('/assets/images/flags/japan.png') }}" alt="user-image" class="me-1" height="18"> <span class="align-middle">{{ GoogleTranslate::trans('Japanese', 'ja' )}}</span>
                     </a>
-                    <!-- item-->
                     <a href="{{ route('changeLang').'?lang=th' }}" class="dropdown-item notify-item language">
                         <img src="{{ URL::asset ('/assets/images/flags/thailand.png') }}" alt="user-image" class="me-1" height="18"> <span class="align-middle">{{ GoogleTranslate::trans('Thai language', 'th' ) }}</span>
                     </a>
                 </div>
-            </div>
+            </div> -->
 
         <div class="dropdown d-none d-lg-inline-block ms-1">
             <button type="button" class="btn header-item noti-icon waves-effect"
@@ -406,7 +400,7 @@
             </div>
             @else
             <div class="dropdown d-inline-block">
-                <a class="dropdown-item" href="{{ route('login') }}"><button type="button" class="btn header-item waves-effect">{{ GoogleTranslate::trans('Login', app()->getLocale()) }}
+                <a class="dropdown-item" href="{{ route('login') }}"><button type="button" class="btn header-item waves-effect">Login
                     </button> </a>
             </div>
             @endif

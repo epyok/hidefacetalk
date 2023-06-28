@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\Products;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -30,8 +31,17 @@ class HomeController extends Controller
 
     public function root()
     {
+
+        $posts = Post::orderBy('created_at','desc')
+        ->get();
      
-        return view('index');
+        return view('index',compact('posts'));
+    }
+
+    public function checkTracking()
+    {
+
+        return view('checktracking');
     }
 
     /*Language Translation*/
@@ -46,6 +56,9 @@ class HomeController extends Controller
             return redirect()->back();
         }
     }
+
+
+    //-------------------------------------------------------------------------------------------------------
 
     public function updateProfile(Request $request, $id)
     {
